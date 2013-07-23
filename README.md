@@ -36,7 +36,7 @@ Example:
 
 	  class DisplayEvents
 	    def self.render(obj)
-	      obj.events.each { |e| puts "Event URL: #{e['url']}, Event Type: #{e['type']}"}
+	      obj.events.slice(0..obj.count.to_i).map { |e| "Event URL: #{e['url']}, Event Type: #{e['type']}"}
 	    end
 	  end
 	
