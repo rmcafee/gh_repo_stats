@@ -2,7 +2,7 @@
 
 # Installation
 
-  $ gem install gh_repo_stats
+  	gem install gh_repo_stats
 
 # Requirements
 
