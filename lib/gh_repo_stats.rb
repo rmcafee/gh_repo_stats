@@ -1,5 +1,9 @@
-require "gh_repo_stats/version"
 require "thor"
+
+ROOT_DIR = File.dirname(__FILE__)
+
+require File.join(ROOT_DIR, "gh_repo_stats/version")
+require File.join(ROOT_DIR, "gh_repo_stats/stats_query")
 
 module GHRepoStats
   class CLI < Thor
@@ -12,7 +16,7 @@ module GHRepoStats
     option :count,    banner: "Limit the number of results in the output"
 
     def gh_repo_stats
-      puts options
+      GHRepoStats::StatsQuery.new(options).call
       # puts "Github Reports after:#{after} before:#{before} event:#{event} count:#{count}"
     end
 
